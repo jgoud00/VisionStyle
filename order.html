@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VisionStyle - Order</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    animation: fadeInDown 0.8s ease both;
+}
+nav {
+    background: #111;
+    padding: 15px;
+    text-align: center;
+    animation: fadeInDown 0.8s ease 0.2s both;
+}
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background-color: #00aaff;
+    transition: width 0.3s ease;
+}
+nav a:hover { color: #00aaff; }
+nav a:hover::after { width: 100%; }
+
+.form-section {
+    padding: 50px 30px;
+    background: white;
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    animation: fadeInUp 0.9s ease 0.3s both;
+}
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    outline: none;
+    
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 1px solid #007bff;
+    box-shadow: 0 0 8px rgba(0,123,255,0.3);
+}
+button {
+    margin-top: 25px;
+    padding: 14px;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+    background: #0056b3;
+    transform: scale(1.02);
+}
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+<body>
+<header>VisionStyle</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="order.html">Order</a>
+</nav>
+<section class="form-section">
+    <h2>Place Your Order</h2>
+    <form>
+        <label>Contact Information</label>
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter your phone number" required>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+        <label>Select Frame</label>
+        <select>
+            <option>Classic Black Frame</option>
+            <option>Modern Transparent</option>
+            <option>Premium Metal Frame</option>
+            <option>Round Vintage</option>
+            <option>Luxury Gold Frame</option>
+        </select>
+        <label>Prescription Details</label>
+        <textarea placeholder="Enter your prescription details here..." rows="4"></textarea>
+        <button type="submit">Submit Order</button>
+    </form>
+</section>
+<footer>
+    <p>2026 VisionStyle</p>
+</footer>
+</body>
+</html>

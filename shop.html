@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VisionStyle - Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            animation: fadeInDown 0.8s ease both;
+        }
+        header h1 { letter-spacing: 2px; }
+
+        nav {
+            background: #111;
+            padding: 15px;
+            animation: fadeInDown 0.8s ease 0.2s both;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
+            background-color: #00aaff;
+            transition: width 0.3s ease;
+        }
+        nav a:hover { color: #00aaff; }
+        nav a:hover::after { width: 100%; }
+
+        .container {
+            padding: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .container h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        
+        .card {
+            background: white;
+            width: 280px;
+            display: inline-block;
+            margin: 15px;
+            padding-bottom: 20px;
+            vertical-align: top;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            
+            animation: fadeInUp 0.7s ease both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        .card:nth-child(4) { animation-delay: 0.8s; }
+
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            transition: transform 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover img { transform: scale(1.05); }
+
+        .card h3 {
+            margin-top: 12px;
+            font-size: 18px;
+        }
+
+        .price {
+            color: #00aaff;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            background-color: #111;
+            color: white;
+            padding: 8px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .buy-btn:hover {
+            background-color: #00aaff;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>VisionStyle Shop</h1></header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="order.html">Order</a>
+    </nav>
+    <div class="container">
+        <h2>Our Collection</h2>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400" alt="Glasses">
+            <h3>Classic Black</h3>
+            <p class="price">$49</p>
+            <a href="order.html" class="buy-btn">Select Frame</a>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1591076482161-421a3a9483ee?w=400" alt="Glasses">
+            <h3>Modern Clear</h3>
+            <p class="price">$59</p>
+            <a href="order.html" class="buy-btn">Select Frame</a>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400" alt="Glasses">
+            <h3>Premium Metal</h3>
+            <p class="price">$79</p>
+            <a href="order.html" class="buy-btn">Select Frame</a>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=400" alt="Glasses">
+            <h3>Vintage Round</h3>
+            <p class="price">$69</p>
+            <a href="order.html" class="buy-btn">Select Frame</a>
+        </div>
+    </div>
+    <footer><p>2026 VisionStyle</p></footer>
+</body>
+</html>
