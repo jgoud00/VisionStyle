@@ -12,27 +12,16 @@
             text-align: center;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
         header {
             background: white;
             padding: 20px;
             border-bottom: 1px solid #ddd;
-            animation: fadeInDown 0.8s ease both;
         }
-        header h1 { letter-spacing: 2px; }
+        header h1 { letter-spacing: 2px; font-size: 28px; }
 
         nav {
             background: #111;
             padding: 15px;
-            animation: fadeInDown 0.8s ease 0.2s both;
         }
         nav a {
             color: white;
@@ -55,123 +44,239 @@
         nav a:hover::after { width: 100%; }
 
         .container {
-            padding: 40px;
-            max-width: 1100px;
+            padding: 40px 20px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         .container h2 {
             font-size: 28px;
             margin-bottom: 30px;
-            animation: fadeInUp 0.8s ease 0.3s both;
         }
 
-        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+
         .card {
             background: white;
-            width: 280px;
-            display: inline-block;
-            margin: 15px;
-            padding-bottom: 20px;
-            vertical-align: top;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            
-            animation: fadeInUp 0.7s ease both;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
-        
-        .card:nth-child(1) { animation-delay: 0.2s; }
-        .card:nth-child(2) { animation-delay: 0.4s; }
-        .card:nth-child(3) { animation-delay: 0.6s; }
-        .card:nth-child(4) { animation-delay: 0.8s; }
 
-        
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.13);
         }
 
-        .card img {
+        .card-img-wrapper {
             width: 100%;
             height: 200px;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            transition: transform 0.4s ease;
             overflow: hidden;
+            background: #e8f0fe;
         }
-        
-        .card:hover img { transform: scale(1.05); }
-
-        .card h3 {
-            margin-top: 12px;
-            font-size: 18px;
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.4s ease;
         }
+        .card:hover .card-img-wrapper img { transform: scale(1.07); }
 
-        .price {
+        .card-body { padding: 16px; }
+
+        .badge {
+            display: inline-block;
+            background: #e8f5ff;
             color: #00aaff;
+            font-size: 11px;
             font-weight: bold;
-            font-size: 18px;
-            margin: 8px 0;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
+        .card-body h3 { font-size: 17px; color: #222; margin-bottom: 6px; }
+        .card-body p  { color: #777; font-size: 13px; line-height: 1.5; }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .price { color: #00aaff; font-weight: bold; font-size: 20px; }
 
         .buy-btn {
             display: inline-block;
             background-color: #111;
             color: white;
-            padding: 8px 20px;
+            padding: 8px 18px;
             text-decoration: none;
-            border-radius: 4px;
-            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        .buy-btn:hover {
-            background-color: #00aaff;
-            transform: scale(1.05);
-        }
+        .buy-btn:hover { background-color: #00aaff; transform: scale(1.05); }
 
         footer {
             background: #111;
             color: #aaa;
             padding: 20px;
             margin-top: 40px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <header><h1>VisionStyle Shop</h1></header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="order.html">Order</a>
-    </nav>
-    <div class="container">
-        <h2>Our Collection</h2>
+
+<header><h1>VisionStyle Shop</h1></header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="order.html">Order</a>
+</nav>
+
+<div class="container">
+    <h2>Our Collection</h2>
+
+    <div class="cards-grid">
+
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400" alt="Glasses">
-            <h3>Classic Black</h3>
-            <p class="price">$49</p>
-            <a href="order.html" class="buy-btn">Select Frame</a>
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1613205974488-7abfdfeb723c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBmcmFtZSUyMGdsYXNzZXN8ZW58MHx8MHx8fDA%3D" alt="Classic Black Frame">
+            </div>
+            <div class="card-body">
+                <span class="badge">Bestseller</span>
+                <h3>Classic Black Frame</h3>
+                <p>Timeless black frame — perfect for every occasion.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$49</span>
+                <a href="order.html" class="buy-btn">Select Frame</a>
+            </div>
         </div>
+
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1591076482161-421a3a9483ee?w=400" alt="Glasses">
-            <h3>Modern Clear</h3>
-            <p class="price">$59</p>
-            <a href="order.html" class="buy-btn">Select Frame</a>
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1764737711260-9661f223d782?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9kZXJuJTIwY2xlYXIlMjBmcmFtZXxlbnwwfHwwfHx8MA%3D%3D" alt="Modern Clear Frame">
+            </div>
+            <div class="card-body">
+                <span class="badge">New</span>
+                <h3>Modern Clear Frame</h3>
+                <p>Transparent design — light, minimal and stylish.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$59</span>
+                <a href="order.html" class="buy-btn">Select Frame</a>
+            </div>
         </div>
+
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400" alt="Glasses">
-            <h3>Premium Metal</h3>
-            <p class="price">$79</p>
-            <a href="order.html" class="buy-btn">Select Frame</a>
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1756725519515-a1d8c7a4cdc1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWV0YWwlMjBmcmFtZSUyMGdsYXNzZXN8ZW58MHx8MHx8fDA%3D" alt="Premium Metal Frame">
+            </div>
+            <div class="card-body">
+                <span class="badge">Premium</span>
+                <h3>Premium Metal Frame</h3>
+                <p>Lightweight metal build — durable and sophisticated.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$79</span>
+                <a href="order.html" class="buy-btn">Select Frame</a>
+            </div>
         </div>
+
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=400" alt="Glasses">
-            <h3>Vintage Round</h3>
-            <p class="price">$69</p>
-            <a href="order.html" class="buy-btn">Select Frame</a>
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1674660989545-91b021cf9db1?q=80&w=1129&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vintage Round Frame">
+            </div>
+            <div class="card-body">
+                <span class="badge">Popular</span>
+                <h3>Vintage Round Frame</h3>
+                <p>Retro round style — classic look with modern comfort.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$69</span>
+                <a href="order.html" class="buy-btn">Select Frame</a>
+            </div>
         </div>
+
+        <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1755869980879-1cc345f1980c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4dXJ5JTIwZ29sZCUyMGZyYW1lJTIwZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Luxury Gold Frame">
+            </div>
+            <div class="card-body">
+                <span class="badge">Luxury</span>
+                <h3>Luxury Gold Frame</h3>
+                <p>Gold-toned metal frame — elegant and eye-catching.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$99</span>
+                <a href="order.html" class="buy-btn">Select Frame</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1576213740187-4ff9a067f27b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport Blue Frame">
+            </div>
+            <div class="card-body">
+                <span class="badge">Sport</span>
+                <h3>Sport Blue Frame</h3>
+                <p>Bold blue frame — designed for active lifestyles.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$55</span>
+                <a href="order.html" class="buy-btn">Select Frame</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://plus.unsplash.com/premium_photo-1734664184720-386b74d23c54?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2xpbSUyMHJlY3RhbmdsZSUyMGZyYW1lJTIwZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Slim Rectangle Frame">
+            </div>
+            <div class="card-body">
+                <span class="badge">Trending</span>
+                <h3>Slim Rectangle Frame</h3>
+                <p>Thin rectangular frame — clean professional look.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$65</span>
+                <a href="order.html" class="buy-btn">Select Frame</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1653881143772-192556864811?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cat Eye Frame">
+            </div>
+            <div class="card-body">
+                <span class="badge">New</span>
+                <h3>Cat Eye Frame</h3>
+                <p>Bold cat eye design — stylish and expressive.</p>
+            </div>
+            <div class="card-footer">
+                <span class="price">$72</span>
+                <a href="order.html" class="buy-btn">Select Frame</a>
+            </div>
+        </div>
+
     </div>
-    <footer><p>2026 VisionStyle</p></footer>
+</div>
+
+<footer><p>2026 VisionStyle | All Rights Reserved</p></footer>
+
 </body>
 </html>
