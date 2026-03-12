@@ -1,184 +1,183 @@
- <!DOCTYPE html>
-... <html>
-... <head>
-...     <title>VisionStyle - Home</title>
-...     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-...     <style>
-...         * { margin: 0; padding: 0; box-sizing: border-box; }
-...
-...         body {
-           font-family: Arial, sans-serif;
-...             background-color: #f4f4f4;
-...             color: #333;
-...             line-height: 1.6;
-...         }
-...
-...
-...         @keyframes fadeInDown {
-...             from { opacity: 0; transform: translateY(-30px); }
-...             to   { opacity: 1; transform: translateY(0); }
-...         }
-...         @keyframes fadeInUp {
-...             from { opacity: 0; transform: translateY(40px); }
-...             to   { opacity: 1; transform: translateY(0); }
-...         }
-...         @keyframes fadeIn {
-...             from { opacity: 0; }
-...             to   { opacity: 1; }
-...         }
-...         @keyframes pulse {
-...             0%   { box-shadow: 0 0 0 0 rgba(0,170,255,0.5); }
-...             70%  { box-shadow: 0 0 0 12px rgba(0,170,255,0); }
-...             100% { box-shadow: 0 0 0 0 rgba(0,170,255,0); }
-...         }
-...
-...
-...         header {
-...             background-color: #ffffff;
-...             padding: 40px 20px;
-...             text-align: center;
-...             border-bottom: 2px solid #dddddd;
-...             animation: fadeInDown 0.8s ease both;
-...         }
-...         header h1 {
-...             font-size: 36px;
-...             letter-spacing: 2px;
-...         }
-...         header p {
-...             color: #777;
-...             margin-top: 6px;
-...             animation: fadeIn 1.2s ease both;
-...         }
-...
-...
-...         nav {
-...             background-color: #111111;
-...             padding: 15px;
-...             text-align: center;
-...             animation: fadeInDown 0.8s ease 0.2s both;
-...         }
-...         nav a {
-...             color: #ffffff;
-...             margin: 0 20px;
-...             text-decoration: none;
-...             font-weight: bold;
-...             position: relative;
-...             padding-bottom: 4px;
-...             transition: color 0.3s ease;
-...         }
-...
-...         nav a::after {
-...             content: '';
-...             position: absolute;
-...             bottom: 0; left: 0;
-...             width: 0; height: 2px;
-...             background-color: #00aaff;
-...             transition: width 0.3s ease;
-...         }
-...         nav a:hover { color: #00aaff; }
-...         nav a:hover::after { width: 100%; }
-...
-...
-...         .hero {
-...             background-color: #222222;
-...             color: #ffffff;
-...             padding: 100px 20px;
-...             text-align: center;
-...             animation: fadeIn 1s ease 0.3s both;
-...         }
-...         .hero h2 {
-...             font-size: 40px;
-...             margin-bottom: 10px;
-...             animation: fadeInDown 0.9s ease 0.4s both;
-...         }
-...         .hero p {
-...             font-size: 18px;
-...             color: #aaaaaa;
-...             animation: fadeInUp 0.9s ease 0.5s both;
-...         }
-...         .cta-button {
-...             display: inline-block;
-...             background-color: #00aaff;
-...             color: white;
-...             padding: 14px 30px;
-...             text-decoration: none;
-...             border-radius: 4px;
-...             margin-top: 25px;
-...             font-weight: bold;
-...             font-size: 16px;
-...             animation: fadeInUp 0.9s ease 0.6s both, pulse 2s ease 1.5s infinite;
-...             transition: background-color 0.3s ease, transform 0.2s ease;
-...         }
-...         .cta-button:hover {
-...             background-color: black;
-...             transform: scale(1.05);
-...         }
-...
-...
-...         .section {
-...             padding: 70px 20px;
-...             max-width: 800px;
-...             margin: 0 auto;
-...             text-align: center;
-...             /* background-color: #ffffff; */
-...             animation: fadeInUp 1s ease 0.5s both;
-...         }
-...         .section h2 {
-...             font-size: 28px;
-...             margin-bottom: 15px;
-...             position: relative;
-...             display: inline-block;
-...         }
-...
-...         .section h2::after {
-...             content: '';
-...             display: block;
-...             width: 0;
-...             height: 3px;
-...             background: #00aaff;
-...             margin: 6px auto 0;
-...             transition: width 0.6s ease;
-...         }
-...         .section:hover h2::after { width: 100%; }
-...         .section p {
-...             color: #555;
-...             font-size: 16px;
-...             line-height: 1.8;
-...         }
-...
-...
-...         footer {
-...             background-color: #111111;
-...             color: #aaaaaa;
-...             text-align: center;
-...             padding: 30px;
-...             font-size: 14px;
-...             animation: fadeIn 1s ease 0.8s both;
-...         }
-...     </style>
-... </head>
-... <body>
-...     <header>
-...         <h1>VisionStyle</h1>
-...         <p>Premium Eyewear for Everyone</p>
-...     </header>
-...     <nav>
-...         <a href="index.html">Home</a>
-...         <a href="shop.html">Shop</a>
-...         <a href="order.html">Order</a>
-...     </nav>
-...     <div class="hero">
-...         <h2>Stylish & Affordable Glasses</h2>
-...         <p>Find the pair that defines your look.</p>
-...         <a href="shop.html" class="cta-button">Browse Shop</a>
-...     </div>
-...     <div class="section">
-...         <h2>About Us</h2>
-...         <p>VisionStyle provides high-quality, trendy frames at prices that won't break the bank. We use durable mate
-... rials and modern designs to ensure you look your best.</p>
-...     </div>
-...     <footer>
-...         <p>2026 VisionStyle | All Rights Reserved</p>
-...     </footer>
-... </body>
-... </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VisionStyle - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(0,170,255,0.5); }
+            70%  { box-shadow: 0 0 0 12px rgba(0,170,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,170,255,0); }
+        }
+
+        
+        header {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid #dddddd;
+            animation: fadeInDown 0.8s ease both;
+        }
+        header h1 {
+            font-size: 36px;
+            letter-spacing: 2px;
+        }
+        header p {
+            color: #777;
+            margin-top: 6px;
+            animation: fadeIn 1.2s ease both;
+        }
+
+        
+        nav {
+            background-color: #111111;
+            padding: 15px;
+            text-align: center;
+            animation: fadeInDown 0.8s ease 0.2s both;
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
+            background-color: #00aaff;
+            transition: width 0.3s ease;
+        }
+        nav a:hover { color: #00aaff; }
+        nav a:hover::after { width: 100%; }
+
+        
+        .hero {
+            background-color: #222222;
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            animation: fadeIn 1s ease 0.3s both;
+        }
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            animation: fadeInDown 0.9s ease 0.4s both;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #aaaaaa;
+            animation: fadeInUp 0.9s ease 0.5s both;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #00aaff;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            animation: fadeInUp 0.9s ease 0.6s both, pulse 2s ease 1.5s infinite;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: black;
+            transform: scale(1.05);
+        }
+
+        
+        .section {
+            padding: 70px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #ffffff;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: #00aaff;
+            margin: 6px auto 0;
+            transition: width 0.6s ease;
+        }
+        .section:hover h2::after { width: 100%; }
+        .section p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        
+        footer {
+            background-color: #111111;
+            color: #aaaaaa;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            animation: fadeIn 1s ease 0.8s both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VisionStyle</h1>
+        <p>Premium Eyewear for Everyone</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="order.html">Order</a>
+    </nav>
+    <div class="hero">
+        <h2>Stylish & Affordable Glasses</h2>
+        <p>Find the pair that defines your look.</p>
+        <a href="shop.html" class="cta-button">Browse Shop</a>
+    </div>
+    <div class="section">
+        <h2>About Us</h2>
+        <p>VisionStyle provides high-quality, trendy frames at prices that won't break the bank. We use durable materials and modern designs to ensure you look your best.</p>
+    </div>
+    <footer>
+        <p>2026 VisionStyle | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
