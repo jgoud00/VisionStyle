@@ -1,213 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Lenskart - Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenskart - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f7f9fc;
+            color: #333;
+            line-height: 1.6;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
 
-body{
-font-family:'Segoe UI', sans-serif;
-background:#f7f9fc;
-color:#333;
-line-height:1.6;
-}
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
 
-@keyframes fadeInDown{
-from{opacity:0; transform:translateY(-30px);}
-to{opacity:1; transform:translateY(0);}
-}
+        @keyframes pulse {
+            0%   { box-shadow: 0 0 0 0    rgba(0, 120, 255, 0.4); }
+            70%  { box-shadow: 0 0 0 12px rgba(0, 120, 255, 0);   }
+            100% { box-shadow: 0 0 0 0    rgba(0, 120, 255, 0);   }
+        }
+        header {
+            background: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid #e5e5e5;
+            animation: fadeInDown 0.8s ease both;
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
 
-@keyframes fadeInUp{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1; transform:translateY(0);}
-}
+        header h1 {
+            font-size: 38px;
+            letter-spacing: 2px;
+            color: #2c6bed;
+        }
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
+        header p {
+            color: #777;
+            margin-top: 6px;
+            animation: fadeIn 1.2s ease both;
+        }
+        nav {
+            background: #2c6bed;
+            padding: 15px;
+            text-align: center;
+            animation: fadeInDown 0.8s ease 0.2s both;
+            transition: background 0.4s ease;
+        }
 
-@keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(0,120,255,0.4);}
-70%{box-shadow:0 0 0 12px rgba(0,120,255,0);}
-100%{box-shadow:0 0 0 0 rgba(0,120,255,0);}
-}
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 4px;
+            transition: 0.3s;
+        }
 
-header{
-background:#ffffff;
-padding:40px 20px;
-text-align:center;
-border-bottom:2px solid #e5e5e5;
-animation:fadeInDown .8s ease both;
-}
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: 0.3s;
+        }
 
-header h1{
-font-size:38px;
-letter-spacing:2px;
-color:#2c6bed;
-}
+        nav a:hover::after {
+            width: 100%;
+        }
+        .hero {
+            background: #eaf1ff;
+            padding: 100px 20px;
+            text-align: center;
+            animation: fadeIn 1s ease 0.3s both;
+            transition: background 0.4s ease;
+        }
 
-header p{
-color:#777;
-margin-top:6px;
-animation:fadeIn 1.2s ease both;
-}
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: #222;
+            animation: fadeInDown 0.9s ease 0.4s both;
+        }
 
-nav{
-background:#2c6bed;
-padding:15px;
-text-align:center;
-animation:fadeInDown .8s ease .2s both;
-}
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            animation: fadeInUp 0.9s ease 0.5s both;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #2c6bed;
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            animation: fadeInUp 0.9s ease 0.6s both, pulse 2s ease 1.5s infinite;
+            transition: background 0.3s, transform 0.3s;
+        }
 
-nav a{
-color:#ffffff;
-margin:0 20px;
-text-decoration:none;
-font-weight:bold;
-position:relative;
-padding-bottom:4px;
-transition:.3s;
-}
+        .cta-button:hover {
+            background: #1f4fc4;
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 70px 20px;
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            animation: fadeInUp 1s ease 0.5s both;
+            transition: background 0.4s ease;
+        }
 
-nav a::after{
-content:'';
-position:absolute;
-bottom:0;
-left:0;
-width:0;
-height:2px;
-background:#ffffff;
-transition:.3s;
-}
+        .section h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            color: #2c6bed;
+        }
 
-nav a:hover::after{
-width:100%;
-}
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: #2c6bed;
+            margin: 6px auto 0;
+            transition: 0.6s;
+        }
 
-.hero{
-background:#eaf1ff;
-padding:100px 20px;
-text-align:center;
-animation:fadeIn 1s ease .3s both;
-}
+        .section:hover h2::after {
+            width: 100%;
+        }
 
-.hero h2{
-font-size:42px;
-margin-bottom:10px;
-color:#222;
-animation:fadeInDown .9s ease .4s both;
-}
+        .section p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        footer {
+            background: #2c6bed;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            animation: fadeIn 1s ease 0.8s both;
+            transition: background 0.4s ease;
+        }
+        body.dark              { background: #121212; color: #e0e0e0; }
+        body.dark header       { background: #1e1e1e; border-color: #333; }
+        body.dark header p     { color: #aaa; }
+        body.dark nav          { background: #1a1a2e; }
+        body.dark .hero        { background: #1a1a2e; }
+        body.dark .hero h2     { color: #f0f0f0; }
+        body.dark .hero p      { color: #bbb; }
+        body.dark .section     { background: #1e1e1e; }
+        body.dark .section p   { color: #aaa; }
+        body.dark footer       { background: #1a1a2e; }
+        .toggle-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #2c6bed;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: background 0.3s, transform 0.2s;
+        }
 
-.hero p{
-font-size:18px;
-color:#555;
-animation:fadeInUp .9s ease .5s both;
-}
+        .toggle-btn:hover {
+            background: #1f4fc4;
+            transform: scale(1.1);
+        }
 
-.cta-button{
-display:inline-block;
-background:#2c6bed;
-color:white;
-padding:14px 32px;
-text-decoration:none;
-border-radius:5px;
-margin-top:25px;
-font-weight:bold;
-font-size:16px;
-animation:fadeInUp .9s ease .6s both, pulse 2s ease 1.5s infinite;
-transition:.3s;
-}
-
-.cta-button:hover{
-background:#1f4fc4;
-transform:scale(1.05);
-}
-
-.section{
-padding:70px 20px;
-max-width:800px;
-margin:40px auto;
-text-align:center;
-background:#ffffff;
-border-radius:10px;
-animation:fadeInUp 1s ease .5s both;
-}
-
-.section h2{
-font-size:30px;
-margin-bottom:15px;
-position:relative;
-display:inline-block;
-color:#2c6bed;
-}
-
-.section h2::after{
-content:'';
-display:block;
-width:0;
-height:3px;
-background:#2c6bed;
-margin:6px auto 0;
-transition:.6s;
-}
-
-.section:hover h2::after{
-width:100%;
-}
-
-.section p{
-color:#555;
-font-size:16px;
-line-height:1.8;
-}
-
-footer{
-background:#2c6bed;
-color:#ffffff;
-text-align:center;
-padding:30px;
-font-size:14px;
-animation:fadeIn 1s ease .8s both;
-}
-
-</style>
+    </style>
 </head>
 
 <body>
+    <header>
+        <h1>Lenskart</h1>
+        <p>Premium Eyewear for Everyone</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="order.html">Order</a>
+    </nav>
+    <div class="hero">
+        <h2>Stylish &amp; Comfortable Glasses</h2>
+        <p>Find the perfect frame that fits your personality.</p>
+        <a href="shop.html" class="cta-button">Browse Collection</a>
+    </div>
+    <div class="section">
+        <h2>About Us</h2>
+        <p>
+            Lenskart offers modern eyewear designed for comfort, durability, and style.
+            Our goal is to bring high-quality frames and lenses to everyone at affordable prices.
+        </p>
+    </div>
+    <footer>
+        <p>2026 Lenskart | All Rights Reserved</p>
+    </footer>
+    <button class="toggle-btn" id="toggleBtn">🌙</button>
 
-<header>
-<h1>Lenskart</h1>
-<p>Premium Eyewear for Everyone</p>
-</header>
+    <script>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="shop.html">Shop</a>
-<a href="order.html">Order</a>
-</nav>
+        const toggleBtn = document.getElementById('toggleBtn');
 
-<div class="hero">
-<h2>Stylish & Comfortable Glasses</h2>
-<p>Find the perfect frame that fits your personality.</p>
-<a href="shop.html" class="cta-button">Browse Collection</a>
-</div>
+        toggleBtn.addEventListener('click', function () {
+            document.body.classList.toggle('dark');
+            if (document.body.classList.contains('dark')) {
+                toggleBtn.textContent = '☀️';
+            } else {
+                toggleBtn.textContent = '🌙';
+            }
 
-<div class="section">
-<h2>About Us</h2>
-<p>Lenskart offers modern eyewear designed for comfort, durability, and style. Our goal is to bring high-quality frames and lenses to everyone at affordable prices.</p>
-</div>
+        });
 
-<footer>
-<p>2026 Lenskart | All Rights Reserved</p>
-</footer>
+    </script>
 
 </body>
+
 </html>
